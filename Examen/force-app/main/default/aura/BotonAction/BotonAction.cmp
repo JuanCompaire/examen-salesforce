@@ -3,15 +3,16 @@
     <input type="button" value="Grabar" name="Grabar" onclick="{!c.grabar}"/>
     <input type="button" value="Stop" name="Stop" onclick="{!c.stop}"/>
     <input type="button" value="Play" name="Play" onclick="{!c.play}"/>
+    <input type="button" value="Save" name="Save" onclick="{!c.save}"/>
     <input type="button" value="Clear" name="Clear" onclick="{!c.clear}"/>
     <br/>
     <h1>Lista de la combinacion</h1>
     <aura:handler event="c:evtData" action="{!c.addToList}"/>
-    <aura:attribute name="lista" type="String[]" default="[]"/>
-    <aura:attribute name="listaSucesiones" type="String" default="[]"/>
+    <aura:attribute name="lista" type="List" default="[]"/>
+    <aura:attribute name="listaTemporal" type="List" default="[]"/>
     <table>
         <tr>
-            <aura:iteration items="{!v.lista}" var="item">
+            <aura:iteration items="{!v.listaTemporal}" var="item">
                 <td>{!item}</td>
             </aura:iteration>
         </tr>

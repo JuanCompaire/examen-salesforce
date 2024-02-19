@@ -1,9 +1,9 @@
 public with sharing class ListApex {
     @AuraEnabled
-    public static Void insertCombi(List<String> combi){
-        Account account = new Account();   
+    public static Void guardarSecuencias(List<String> secuencia){
         
-        insert account;
+        
+        
     }
 /*
     @AuraEnabled

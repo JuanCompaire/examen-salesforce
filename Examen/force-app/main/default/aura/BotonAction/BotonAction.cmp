@@ -8,6 +8,7 @@
     <h1>Lista de la combinacion</h1>
     <aura:handler event="c:evtData" action="{!c.addToList}"/>
     <aura:attribute name="lista" type="String[]" default="[]"/>
+    <aura:attribute name="listaSucesiones" type="String" default="[]"/>
     <table>
         <tr>
             <aura:iteration items="{!v.lista}" var="item">

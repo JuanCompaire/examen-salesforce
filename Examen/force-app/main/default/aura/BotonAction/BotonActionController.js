@@ -10,22 +10,13 @@
     },
     stop : function(component, event, helper) {
         component.set("v.recording", false);
-        var secuencias = component.get("v.lista");
-        var accion = component.get("c.guardarSecuencias");
-        accion.setParams({"secuencia": secuencias});
-        accion.setCallback(this, function(response){
-            var state = response.getState();
-            if (state === "SUCCESS") {
-                component.set("v.lista", []);
-                console.log("Secuencias guardadas");
-            }
-            else{
-                console.log("Error al guardar secuencias");
-            }
-        });
-        $A.enqueueAction(action);
+        var lista = component.get("v.lista");
+        var lista1 = lista;
 
+        
+        component.set("v.lista", []);
 
+        console.log(lista1.join(' '));
     },
     play : function(component, event, helper) {
 

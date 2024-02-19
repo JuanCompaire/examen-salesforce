@@ -1,6 +1,8 @@
 public with sharing class ListApex {
     @AuraEnabled
-    public static Void guardarSecuencias(List<String> secuencia){
+    public static void saveSecuencias(){
+       
+        
         
         
         

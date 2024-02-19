@@ -1,0 +1,4 @@
+<aura:component>
+    <input type="button" value="0" name="btn0" onclick="{!c.add0}"/>
+    <input type="button" value="1" name="btn1" onclick="{!c.add1}"/>
+</aura:component>	

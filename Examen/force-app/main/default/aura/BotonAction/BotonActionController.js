@@ -8,6 +8,9 @@
         component.set("v.recording", false);
         var lista = component.get("v.lista");
         var secuenciaNow = component.get("v.listaTemporal");
+        var add = component.get('c.addList')
+        $A.enqueueAction(add);
+        
         if( secuenciaNow && secuenciaNow.length > 0){
             lista.push(secuenciaNow);
         }
@@ -33,18 +36,16 @@
     },
     save : function(component, event, helper) {
 
-        var secuencias = component.get("v.lista");
-
         var action = component.get("c.saveSecuencias");
         action.setParams({
-            "secuencias": secuencias
+            listas: component.get("v.lista")
         });
         action.setCallback(this, function(response){
             var state = response.getState();
             if (state === "SUCCESS") {
                 console.log("Secuencias guardadas");
             }
-            else {
+            else{
                 console.log("Error al guardar las secuencias");
             }
         });
@@ -57,5 +58,11 @@
             listaTemporal.push(item);
             component.set("v.listaTemporal", listaTemporal);
         }        
+    },
+    addList : function(component, event, helper) {
+        var lista = component.get("v.lista");
+        var listas = component.get("v.listaTemporal");
+        listas.push(lista);
+        component.set("v.lista", listas);
     }
 })

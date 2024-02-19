@@ -1,4 +1,4 @@
-<aura:component>
+<aura:component controller="ListApex">
     <aura:attribute name="recording" type="Boolean" default="false"/>
     <input type="button" value="Grabar" name="Grabar" onclick="{!c.grabar}"/>
     <input type="button" value="Stop" name="Stop" onclick="{!c.stop}"/>
@@ -10,6 +10,10 @@
     <aura:handler event="c:evtData" action="{!c.addToList}"/>
     <aura:attribute name="lista" type="List" default="[]"/>
     <aura:attribute name="listaTemporal" type="List" default="[]"/>
+    <aura:attribute name="numberList" type="Object"/> 
+    <aura:attribute name="listItems" type="Object[]"/> 
+
+
     <table>
         <tr>
             <aura:iteration items="{!v.listaTemporal}" var="item">
@@ -17,4 +21,6 @@
             </aura:iteration>
         </tr>
     </table>
+
+   
 </aura:component>	

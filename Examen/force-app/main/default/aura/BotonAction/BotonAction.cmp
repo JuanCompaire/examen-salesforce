@@ -1,4 +1,5 @@
 <aura:component>
+    <aura:attribute name="recording" type="Boolean" default="false"/>
     <input type="button" value="Grabar" name="Grabar" onclick="{!c.grabar}"/>
     <input type="button" value="Stop" name="Stop" onclick="{!c.stop}"/>
     <input type="button" value="Play" name="Play" onclick="{!c.play}"/>
